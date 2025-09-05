@@ -1,0 +1,150 @@
+.proc {
+  background: #fff;
+  padding: clamp(56px, 7vw, 96px) 20px;
+}
+
+.proc__inner {
+  max-width: var(--container-max, 1200px);
+  margin: 0 auto;
+}
+
+.proc__head { margin-bottom: 36px; text-align: center; }
+
+.proc__title {
+  margin: 0 0 10px;
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--color-heading, #0a2540);
+}
+
+.proc__sub {
+  margin: 0 auto;
+  color: var(--color-muted, #4a4a4a);
+  max-width: 65ch;
+}
+
+/* Timeline grid */
+.proc__timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  position: relative;
+}
+
+/* Each step */
+.proc__step {
+  position: relative;
+  text-align: center;
+}
+
+/* Number badge outside the card */
+.proc__badge {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-accent, #00b5ad);
+  color: #fff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 6px rgba(0,181,173,0.15);
+  font-size: 15px;
+  z-index: 2;
+  animation: proc-badge-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes proc-badge-pulse {
+  0%   { box-shadow: 0 0 0 6px rgba(0,181,173,0.15); }
+  50%  { box-shadow: 0 0 0 9px rgba(0,181,173,0.10); }
+  100% { box-shadow: 0 0 0 6px rgba(0,181,173,0.15); }
+}
+
+/* Connector lines between steps (mobile: vertical) */
+.proc__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(0,181,173,0.28), rgba(0,181,173,0.06));
+  pointer-events: none;
+}
+
+/* Card */
+.proc__card {
+  background: #fff;
+  border: 1px solid var(--color-border, #e9eef5);
+  border-radius: 14px;
+  padding: 36px 20px 24px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.proc__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(10,37,64,0.08);
+  border-color: rgba(0,181,173,0.30);
+}
+
+.proc__iconwrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px;
+  color: var(--color-accent, #00b5ad);
+  background: rgba(0,181,173,0.08);
+  box-shadow: 0 0 0 3px rgba(0,181,173,0.12) inset;
+}
+
+.proc__icon { width: 24px; height: 24px; }
+
+.proc__step-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: var(--color-heading, #0a2540);
+}
+
+.proc__desc {
+  margin: 0 auto;
+  max-width: 46ch;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text, #1a1a1a);
+}
+
+/* Desktop: horizontal timeline with connecting lines */
+@media (min-width: 900px) {
+  .proc__timeline {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  /* Move badge up a bit for balance on desktop */
+  .proc__badge {
+    top: -26px;
+  }
+
+  /* Horizontal connectors between steps */
+  .proc__step:not(:last-child)::after {
+    left: auto;
+    bottom: auto;
+    top: -8px;                 /* align with badge center */
+    right: -20px;              /* starts just outside the card */
+    transform: none;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0,181,173,0.28), rgba(0,181,173,0.06));
+  }
+}

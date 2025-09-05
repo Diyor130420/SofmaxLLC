@@ -1,0 +1,16 @@
+:root {
+  --color-bg: #ffffff;
+  --color-heading: #0a2540; /* Navy */
+  --color-text: #1a1a1a;
+  --color-muted: #4a4a4a;
+  --color-accent: #00b5ad;  /* Teal */
+  --color-border: #e9eef5;
+  --brand-gradient: linear-gradient(135deg,#0a2540 0%, #0a2540 60%, #00b5ad 100%);
+  --container-max: 1200px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
