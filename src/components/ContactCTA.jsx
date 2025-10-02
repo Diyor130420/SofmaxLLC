@@ -20,7 +20,7 @@ export default function ContactCTA({ id = "contact" }) {
       <div className="cta__inner">
         <header className="cta__head">
           <div className="cta__eyebrow">Replies within 1 business day</div>
-          <h2 className="cta__title">Get a U.S. launch plan</h2>
+          <h2 className="cta__title">Get a quote</h2>
           <p className="cta__sub">
             Tell us your product and goals. We’ll return a channel plan, budget ranges, and
             first-90-day milestones. Import & compliance are built in, as needed.
@@ -31,7 +31,7 @@ export default function ContactCTA({ id = "contact" }) {
           <div className="cta__success" role="status" aria-live="polite">
             <div className="cta__success-icon" aria-hidden="true">✓</div>
             <h3>Request received</h3>
-            <p>Thanks! We’ll send your plan from <strong>ops@sofmax.com</strong> shortly.</p>
+            <p>Thanks! We’ll reply from <strong>info@sofmax.us</strong> shortly.</p>
             <button className="button button--ghost" onClick={() => setStatus("idle")}>
               Start another request
             </button>
@@ -76,77 +76,12 @@ export default function ContactCTA({ id = "contact" }) {
                 </select>
               </div>
 
-              <div className="cta__field">
-                <label htmlFor="channel">Primary channel</label>
-                <select id="channel" name="channel" defaultValue="">
-                  <option value="" disabled>Select a channel</option>
-                  <option>Amazon</option>
-                  <option>Walmart</option>
-                  <option>Sofmax Marketplace</option>
-                  <option>DTC (Shopify)</option>
-                  <option>Not sure / Advise me</option>
-                </select>
-              </div>
+             
 
-              <div className="cta__field">
-                <label htmlFor="units">Monthly target units</label>
-                <select id="units" name="units" defaultValue="">
-                  <option value="" disabled>Select a range</option>
-                  <option>&lt; 500</option>
-                  <option>500 – 2,000</option>
-                  <option>2,000 – 10,000</option>
-                  <option>10,000+</option>
-                </select>
-              </div>
+             
 
-              <div className="cta__field">
-                <div className="cta__labelrow">
-                  <label htmlFor="destzip">Destination ZIP</label>
-                  <span className="cta__hint">Optional</span>
-                </div>
-                <input id="destzip" name="destzip" type="text" inputMode="numeric" placeholder="e.g., 90001" />
-              </div>
+            
 
-              <div className="cta__field">
-                <div className="cta__labelrow">
-                  <label htmlFor="origin">Origin country / port</label>
-                  <span className="cta__hint">Optional</span>
-                </div>
-                <input id="origin" name="origin" type="text" placeholder="e.g., CN / Shanghai" />
-              </div>
-
-              <div className="cta__field">
-                <label htmlFor="timeline">Preferred timeline</label>
-                <select id="timeline" name="timeline" defaultValue="">
-                  <option value="" disabled>Select an option</option>
-                  <option>As soon as possible</option>
-                  <option>Within 2–4 weeks</option>
-                  <option>1–3 months</option>
-                  <option>Exploratory</option>
-                </select>
-              </div>
-
-              <div className="cta__field">
-                <label htmlFor="mode">Fulfillment mode</label>
-                <select id="mode" name="mode" defaultValue="">
-                  <option value="" disabled>Select mode</option>
-                  <option>FBA (Amazon)</option>
-                  <option>FBM / 3PL</option>
-                  <option>Hybrid</option>
-                  <option>Not sure / Advise me</option>
-                </select>
-              </div>
-
-              <div className="cta__field cta__field--span2">
-                <label htmlFor="details">Product & goals</label>
-                <textarea
-                  id="details"
-                  name="details"
-                  rows="5"
-                  placeholder="E.g., 3 SKUs of kitchenware; launch on Amazon first; target 2k units/month by Q4; need help with content + reviews; import support if required."
-                  required
-                />
-              </div>
             </div>
 
             <div className="cta__consent">
@@ -158,7 +93,7 @@ export default function ContactCTA({ id = "contact" }) {
               className="button button--primary cta__submit"
               disabled={status === "submitting"}
             >
-              {status === "submitting" ? "Submitting…" : "Get my launch plan"}
+              {status === "submitting" ? "Submitting…" : "Get a quote"}
             </button>
           </form>
         )}

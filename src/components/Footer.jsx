@@ -6,8 +6,16 @@ export default function Footer() {
     <footer className="footer" aria-label="Site footer">
       <div className="footer__inner">
         <div className="footer__brand">
-          <span className="footer__logo">S</span>
-          <span className="footer__brand-text">Sofmax LLC</span>
+          <img
+            src= "logo.png"
+            width={60}
+            height={40}
+   // your file in /public
+            alt="Sofmax LLC Logo"
+          
+            priority
+          />
+          
         </div>
 
         <nav className="footer__nav" aria-label="Footer navigation">

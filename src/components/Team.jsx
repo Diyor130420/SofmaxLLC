@@ -4,21 +4,21 @@ import "../styles/Team.css";
 const TEAM = [
   {
     name: "Saidamin Saidkarimov",
-    role: "Co-Founder & CEO",
+    role: "Founder & CEO",
     phone: "+1 (321) 314-7187",
-    email: "Sofmax1911@outlook.com",
+    email: "Saidamin.saidikromov@sofmax.us",
     linkedin: "https://www.linkedin.com/",
   },
   {
     name: "Isafandiyor Okhunov",
-    role: "Operations Manager",
+    role: "Co-Founder & Managing Director",
     phone: "+1 (215) 526-7137",
-    email: "Isfandiyorokhunov2000@gmail.com",
+    email: "Isafandiyor.okhunov@sofmax.us",
     linkedin: "https://www.linkedin.com/in/isafandiyor-okhunov/",
   },
   {
     name: "Rakhmiddin Dekhkonov",
-    role: "Assistant Operations Manager",
+    role: "Operations Manager",
     phone: "+65 9083 0166",
     email: "dehqonovrahmiddin1@gmail.com",
     linkedin: "https://www.linkedin.com/in/rakhmiddin-dekhkonov",

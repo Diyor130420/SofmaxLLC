@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Header.css";
 
+
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
@@ -30,10 +31,18 @@ export default function Header() {
     <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
       <div className="header__inner">
         {/* Brand */}
-        <a href="/" className="header__brand" aria-label="Sofmax LLC home">
-          {/* If you have a logo image, replace the text with <img ... /> */}
-          <span className="header__logo">S</span>
-          <span className="header__brand-text">Sofmax LLC</span>
+        <a href="/" className="flex items-center gap-3">
+          <img
+            src= "logo.png"
+            width={70}
+            height={45}
+   // your file in /public
+            alt="Sofmax LLC Logo"
+          
+            priority
+          />
+        
+          
         </a>
 
         {/* Desktop nav */}
