@@ -4,16 +4,36 @@ import "../styles/ContactCTA.css";
 export default function ContactCTA({ id = "contact" }) {
   const [status, setStatus] = useState("idle"); // 'idle' | 'submitting' | 'success'
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    setStatus("submitting");
-    setTimeout(() => setStatus("success"), 650); // replace with real API later
+  async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.currentTarget;
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
   }
+
+  setStatus("submitting");
+
+  try {
+    const formData = new FormData(form);
+    const res = await fetch("https://formspree.io/f/mgvnnpka", {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
+
+    if (res.ok) {
+      setStatus("success");
+      form.reset();
+    } else {
+      throw new Error("Send failed");
+    }
+  } catch (err) {
+    console.error(err);
+    setStatus("idle");
+    alert("Sorry—couldn’t send your request. Try again later.");
+  }
+}
 
   return (
     <section id={id} className="cta" aria-label="Get a U.S. launch plan">
@@ -75,6 +95,23 @@ export default function ContactCTA({ id = "contact" }) {
                   <option>Other</option>
                 </select>
               </div>
+              <div className="cta__field cta__field--full">
+  <label htmlFor="message">Message</label>
+  <textarea
+    id="message"
+    name="message"
+    rows="4"
+    placeholder="Write your message here..."
+    style={{
+      width: "100%",
+      padding: "10px",
+      border: "1px solid #ccc",
+      borderRadius: "6px",
+      fontSize: "16px",
+      resize: "vertical",
+    }}
+  ></textarea>
+</div>
 
              
 
