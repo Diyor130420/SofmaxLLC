@@ -6,11 +6,13 @@ import './globals.css'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-}
+export const metadata = {
+  title: "Sofmax LLC – U.S. Import Partner",
+  description:
+    "Sofmax helps international brands enter and scale in the U.S. market. We handle go-to-market, compliance, and logistics end-to-end.",
+  
+};
+
 
 export default function RootLayout({
   children,
