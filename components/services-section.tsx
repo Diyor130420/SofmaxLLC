@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Clock, FileText, TrendingUp, Package, Shield, BarChart3 } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
-export function ServicesSection() {
+export function ServicesSection({id="services"} : { id?: string }) {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -62,7 +62,7 @@ export function ServicesSection() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gray-50">
+    <section id={id} ref={sectionRef} className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div
           className="text-center mb-12 transition-all duration-700"

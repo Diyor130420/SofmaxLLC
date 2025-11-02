@@ -3,7 +3,7 @@
 import { Search, ClipboardCheck, Beaker, Truck } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
-export function ProcessSection() {
+export function ProcessSection({ id = "process" }: { id?: string }) {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -52,7 +52,7 @@ export function ProcessSection() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white">
+    <section  id={id} ref={sectionRef} className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div
           className="max-w-4xl mx-auto text-center mb-16 transition-all duration-700"

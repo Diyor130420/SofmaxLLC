@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import { useEffect, useState } from "react"
 
-export function HeroSection() {
+export function HeroSection(id="home") {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-[600px] flex items-center justify-start overflow-hidden">
+    <section id={id} className="relative min-h-[600px] flex items-center justify-start overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-1000"
         style={{
@@ -60,12 +60,15 @@ export function HeroSection() {
               transform: isVisible ? "translateY(0)" : "translateY(20px)",
             }}
           >
+            <a href="#contact">
             <Button
               size="lg"
               className="bg-[#00BFA5] hover:bg-[#00A890] text-white hover:scale-105 transition-transform"
             >
               Get a launch plan
             </Button>
+            </a>
+            <a href="#process">
             <Button
               size="lg"
               variant="outline"
@@ -73,6 +76,7 @@ export function HeroSection() {
             >
               See how it works
             </Button>
+            </a>
           </div>
           <div
             className="flex flex-wrap gap-3 text-sm transition-all duration-700 delay-400"

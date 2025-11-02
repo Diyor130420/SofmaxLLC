@@ -12,19 +12,20 @@ export function Header() {
             </Link>
 
             <nav className="hidden lg:flex items-center gap-6">
-              <Link href="#home" className="text-gray-700 hover:text-[#00BFA5] transition-colors font-medium" >
+              <a href="#home" className="text-gray-700 hover:text-[#00BFA5] transition-colors font-medium">
                 HOME
-              </Link>
-              <Link href="#about" className="text-gray-700 hover:text-[#00BFA5] transition-colors font-medium">
+              </a>
+              <a href="#about" className="text-gray-700 hover:text-[#00BFA5] transition-colors font-medium">
                 ABOUT US
-              </Link>
-              <Link href="#services" className="text-gray-700 hover:text-[#00BFA5] transition-colors font-medium">
-                SERVICES
-              </Link>
-              <Link href="#contact" className="text-gray-700 hover:text-[#00BFA5] transition-colors font-medium">
-                CONTACT
-              </Link>
+              </a>
+              <a href="#services" className="text-gray-700 hover:text-[#00BFA5] transition-colors font-medium">
+               SERVICES
+              </a>
+              <a href="#contact" className="text-gray-700 hover:text-[#00BFA5] transition-colors font-medium">
+               CONTACT
+              </a>
             </nav>
+
           </div>
         </div>
       </div>
