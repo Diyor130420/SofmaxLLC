@@ -13,15 +13,18 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.sofmax.us"),
   icons: {
     icon: [
-      "/favicon.ico",
       { url: "/sofmax-logo.png", type: "image/png", sizes: "32x32" },
       { url: "/sofmax-logo.png", type: "image/png", sizes: "48x48" },
+      { url: "/logo192.png", type: "image/png", sizes: "192x192" },
+      { url: "/logo512.png", type: "image/png", sizes: "512x512" },
     ],
     shortcut: [
-      "/favicon.ico",
       { url: "/sofmax-logo.png", type: "image/png", sizes: "32x32" },
     ],
-    apple: { url: "/logo512.png", sizes: "180x180", type: "image/png" },
+    apple: [
+      { url: "/logo192.png", sizes: "180x180", type: "image/png" },
+      { url: "/logo512.png", sizes: "512x512", type: "image/png" },
+    ],
   },
   openGraph: {
     type: "website",
@@ -56,6 +59,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="/sofmax-logo.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/sofmax-logo.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/logo192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/logo512.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo192.png" />
+        <link rel="apple-touch-icon" sizes="512x512" href="/logo512.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
