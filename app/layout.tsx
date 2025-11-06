@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -12,9 +12,16 @@ export const metadata: Metadata = {
     "Sofmax helps international brands enter and scale in the U.S. market. We handle go-to-market, compliance, and logistics end-to-end.",
   metadataBase: new URL("https://www.sofmax.us"),
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    
+    icon: [
+      "/favicon.ico",
+      { url: "/sofmax-logo.png", type: "image/png", sizes: "32x32" },
+      { url: "/sofmax-logo.png", type: "image/png", sizes: "48x48" },
+    ],
+    shortcut: [
+      "/favicon.ico",
+      { url: "/sofmax-logo.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: { url: "/logo512.png", sizes: "180x180", type: "image/png" },
   },
   openGraph: {
     type: "website",
@@ -33,6 +40,9 @@ export const metadata: Metadata = {
   },
   // not required but nice
   manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
